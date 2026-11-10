@@ -26,4 +26,4 @@ Certifique-se de ter o Python instalado em sua máquina. Siga os passos abaixo:
 
 1. Clone este repositório ou faça o download do arquivo `pedrapapeltesoura.py`:
    ```bash
-   git clone [https://github.com/JuanesPablo/Programas-Python.git](https://github.com/JuanesPablo/Programas-Python.git)
+   git clone (https://github.com/JuanesPablo/Programas-Python.git)
