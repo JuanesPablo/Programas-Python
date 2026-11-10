@@ -1,32 +1,30 @@
 import random #trás a biblioteca da escolha por acaso
 
-player_wins = 0
-computer_wins = 0 
-choices = ["pedra","papel","tesoura"]
+jogador_vitorias = 0
+computador_vitorias = 0 
+escolhas = ["pedra", "papel", "tesoura"]
 
 print("Vamos jogar Pedra, Papel ou Tesoura!")
 
-while player_wins < 2 and computer_wins < 2:
-  while True: 
-    player_choice = input("\nAtençao jogador!\nEscolha entre Pedra, Papel ou Tesoura.\n").lower() #para qualquer que seja a entrada, fique minuscula
-    if player_choice not in choices:
-      print("Escolha a opção correta!")
-  computer_choice = random.choice(choices) #aplicação da escolha por acaso
-  print(f"Escolha do Computador: {computer_choice}")
-  if (player_choice == "pedra" and computer_choice == "tesoura") or (player_choice == "papel" and computer_choice == "pedra") or (player_choice == "tesoura" and computer_choice == "papel"):
-    winner ="Player"
-    player_wins += 1
+while jogador_vitorias < 2 and computador_vitorias < 2:
+  while True: #loop continua até acertar a palavra
+    jogador_escolha = input("\nAtençao jogador!\nEscolha entre Pedra, Papel ou Tesoura.\n").strip().lower() #para qualquer que seja a entrada, fique minuscula
+    if jogador_escolha in escolhas: #se escolher correto, pare senão
+      break
+    print("Escolha a opção correta!")
+  computador_escolha = random.choice(escolhas) #aplicação da escolha por acaso
+  print(f"Escolha do Computador: {computador_escolha}")
+  if (jogador_escolha == "pedra" and computador_escolha == "tesoura") or (jogador_escolha == "papel" and computador_escolha == "pedra") or (jogador_escolha == "tesoura" and computador_escolha == "papel"):
+    jogador_vitorias += 1
     print("\nVocê ganhou essa partida!")
-  elif (player_choice == "pedra" and computer_choice == "pedra") or (player_choice == "papel" and computer_choice == "papel") or (player_choice == "tesoura" and computer_choice == "tesoura"):
-    winner = "Empate"
+  elif (jogador_escolha == "pedra" and computador_escolha == "pedra") or (jogador_escolha == "papel" and computador_escolha == "papel") or (jogador_escolha == "tesoura" and computador_escolha == "tesoura"):
     print("\nDeu empate!")
   else:
-    winner = "Computer"
-    computer_wins += 1
+    computador_vitorias += 1
     print("\nComputador ganhou essa partida, pare de vacilar!")
-  print(f"Placar atual: Jogador: {player_wins} - Computador: {computer_wins}")
+  print(f"Placar atual: Jogador: {jogador_vitorias} - Computador: {computador_vitorias}")
 
-if player_wins > computer_wins:
+if jogador_vitorias > computador_vitorias:
   print("\nParabéns! Você ganhou!")
 else:
   print("\nComputador ganhou.. vacilou ein!")
