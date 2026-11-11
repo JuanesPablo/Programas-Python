@@ -27,3 +27,11 @@ Certifique-se de ter o Python instalado em sua máquina. Siga os passos abaixo:
 1. Clone este repositório ou faça o download do arquivo `pedrapapeltesoura.py`:
    ```bash
    git clone (https://github.com/JuanesPablo/Programas-Python.git)
+
+2. Navegue até a pasta do projeto pelo terminal:
+   ```bash
+   cd Programas-Python
+
+3. Execute o script Python (substitua pelo nome exato do seu arquivo, por exemplo):
+    ```bash
+   py .\pedraPapelTesoura.py
