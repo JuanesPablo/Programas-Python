@@ -24,7 +24,7 @@ Um clássico jogo de Pedra, Papel e Tesoura desenvolvido em Python para rodar di
 
 Certifique-se de ter o Python instalado em sua máquina. Siga os passos abaixo:
 
-1. Clone este repositório ou faça o download do arquivo `pedrapapeltesoura.py`:
+1. Clone este repositório ou faça o download do arquivo `pedraPapelTesoura.py`:
    ```bash
    git clone https://github.com/JuanesPablo/Programas-Python.git
 
