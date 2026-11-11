@@ -1,4 +1,9 @@
 lista_afazer = [] #lista vazia 
+def mostrar_lista():                   #for index, tarefa in enumerate(lista_afazer, start=1):
+  index = 1                            #  print(f"{index}. {tarefa}")                            
+  for tarefa in lista_afazer:          #forma alternativa de fazer uma contagem
+    print(f"{index}. {tarefa}")
+    index += 1 #incremento de +1
 
 print("Bem-vindo à sua lista de Afazeres!")
 while True:
@@ -12,10 +17,7 @@ while True:
       nova_tarefa = input("\nAdicione uma Tarefa: ").capitalize() #comando que faz a primeira letra ficar maiuscola
       lista_afazer.append(nova_tarefa)
       print() #apenas para pular uma linha
-      index = 1
-      for tarefa in lista_afazer:
-        print(f"{index}. {tarefa}")
-        index += 1 #incremento de +1
+      mostrar_lista()
       while True: #looping para que acerte o (S/N)
         continuar = input("\nAdicionar mais uma Tarefa? (S/N): ").lower() #deixa qualquer entrada minuscula
         if continuar in ["s", "n"]:
@@ -31,42 +33,37 @@ while True:
       if len(lista_afazer) == 0: #avisa assim que o último item foi removido
         print("\nVocê removeu o último item. A lista agora está vazia!")
       else:  
-        index = 1
         print()
-        for tarefa in lista_afazer:
-          print(f"{index}. {tarefa}")
-          index += 1 #incremento de +1
+        mostrar_lista()
   elif escolha == "3":
     if len(lista_afazer) == 0:
       print("\nSua lista está vazia!")
     else:
-      index = 1
       print()
-      for tarefa in lista_afazer:  
-        print(f"{index}. {tarefa}")
-        index += 1 #incremento de +1
+      mostrar_lista()
   elif escolha == "4":
     if len(lista_afazer) < 2:
       print("\nA lista precisa ter pelo menos duas tarefas para poder reordena-la.")
     else:
-      index = 1
-      print("\nLista Atual:")
-      for tarefa in lista_afazer:  
-        print(f"{index}. {tarefa}")
-        index += 1 #incremento de +1   
-      posicao_antiga = int(input("Qual o número da Tarefa que gostaria de mudar: ")) - 1 #-1 para ficar dentro so indice do array, validando a proxima regra do if
-      posicao_nova = int(input("Qual a posição (número) que gostaria que a Tarefa ficasse: ")) - 1
-      if 0 <= posicao_antiga < len(lista_afazer) and 0 <= posicao_nova < len(lista_afazer):
-        tarefa_movida = lista_afazer.pop(posicao_antiga)
-        lista_afazer.insert(posicao_nova, tarefa_movida)
-        print("\nTarefas reorganizadas com Sucesso!")
-        index = 1
+      while True:
         print("\nLista Atual:")
-        for tarefa in lista_afazer:  
-          print(f"{index}. {tarefa}")
-          index += 1 #incremento de +1 
-      else:
-        print("\nPosição inválida! Tente Novamente.")
+        mostrar_lista()
+        entrada_antiga = input("Qual o número da Tarefa que gostaria de mudar: ") 
+        entrada_nova = input("Qual a posição (número) que gostaria que a Tarefa ficasse: ")
+        if entrada_antiga.isdigit() and entrada_nova.isdigit(): #verifica se são numeros
+          posicao_antiga = int(entrada_antiga) -1 #-1 para ficar dentro so indice do array, validando a proxima regra do if
+          posicao_nova = int(entrada_nova) -1
+          if 0 <= posicao_antiga < len(lista_afazer) and 0 <= posicao_nova < len(lista_afazer):
+            tarefa_movida = lista_afazer.pop(posicao_antiga) #peguei a informação removida
+            lista_afazer.insert(posicao_nova, tarefa_movida) #muda de posição na lista
+            print("\nTarefas reorganizadas com Sucesso!")
+            print("\nLista Atual:")
+            mostrar_lista()
+            break
+          else:
+            print("\nPosição inválida! Tente Novamente.")
+        else:
+          print("Digite apenas números, por favor!")    
   elif escolha == "5":
     print("\nEncerrando Programa..")
     break
