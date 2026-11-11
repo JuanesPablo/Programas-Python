@@ -67,20 +67,3 @@ while True:
   elif escolha == "5":
     print("\nEncerrando Programa..")
     break
-
-
-#Lembrete de listas:
-#lista = [1,2,3,4,5,6]
-#lista.append(7) #adiciona sempre no final da lista
-#lista.insert(2, "aqui") #adiciona um valor na posiçao do indice que quer
-#lista.pop(2) #remove um valor do indice que colocou ou () para ser do ultimo
-#new = lista.pop() #retorna o valor removido 
-#lista.remove(2) #apaga o valor do indice e retorna nulo, assim como del lista[2]
-#print(len(lista)) #informa o numero de elementos na lista
-#max(lista) #mostra o maior valor da lista
-#min(lista) #mostra o menor vslor da lista
-#lista.sort() #ordena a lista de numeros em ordem crescente e de strg em ordem alfabetica
-#sum(lista) #soma todos os valores numericos da lista 
-#print(lista.count(2)) #mostra quantas vezes esse elemento aparece na lista
-#print(2 in lista) #retorna True ou False se tiver esse valor na lista 
-#print(lista)
