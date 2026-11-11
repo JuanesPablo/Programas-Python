@@ -34,4 +34,4 @@ Certifique-se de ter o Python instalado em sua máquina. Siga os passos abaixo:
 
 3. Execute o script Python (substitua pelo nome exato do seu arquivo, por exemplo):
     ```bash
-   py .\pedraPapelTesoura.py
+   python pedrapapeltesoura.py
